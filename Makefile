@@ -10,7 +10,6 @@ help:
 	@echo "  make test          Run all tests"
 	@echo "  make unit          Run unit tests"
 	@echo "  make integration   Run integration tests"
-	@echo "  make coverage      Generate coverage report"
 	@echo "  make fmt           Format code"
 	@echo "  make vet           Run go vet"
 	@echo "  make clean         Clean test cache"
@@ -46,10 +45,6 @@ unit:
 
 integration:
 	go test ./tests/integration -v
-
-coverage:
-	go test ./... -coverprofile=coverage.out
-	go tool cover -func=coverage.out
 
 clean:
 	go clean -testcache
