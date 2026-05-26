@@ -27,7 +27,9 @@ func TestCachedLoaderUsesCache(t *testing.T) {
 	cached := loader.NewCachedLoader(base, cache.NewTTLCache(time.Minute))
 	_, _ = cached.Load(context.Background(), "product", []string{"p1"}, []string{"en"})
 	_, _ = cached.Load(context.Background(), "product", []string{"p1"}, []string{"en"})
-	if base.calls != 1 { t.Fatalf("expected 1 call, got %d", base.calls) }
+	if base.calls != 1 {
+		t.Fatalf("expected 1 call, got %d", base.calls)
+	}
 }
 
 func TestInvalidateEntity(t *testing.T) {
@@ -36,5 +38,7 @@ func TestInvalidateEntity(t *testing.T) {
 	_, _ = cached.Load(context.Background(), "product", []string{"p1"}, []string{"en"})
 	cached.Invalidate("p1")
 	_, _ = cached.Load(context.Background(), "product", []string{"p1"}, []string{"en"})
-	if base.calls != 2 { t.Fatalf("expected 2 calls after invalidation, got %d", base.calls) }
+	if base.calls != 2 {
+		t.Fatalf("expected 2 calls after invalidation, got %d", base.calls)
+	}
 }

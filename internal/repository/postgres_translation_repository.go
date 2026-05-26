@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/wyzauto/translation-loader/internal/domain"
 	"github.com/jackc/pgx/v5/pgxpool"
+	"github.com/wyzauto/translation-loader/internal/domain"
 )
 
 type PostgresTranslationRepository struct {
