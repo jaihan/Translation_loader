@@ -1,4 +1,4 @@
-# WYZauto Translation Loader
+# Translation Loader
 
 A production-oriented Translation Loader implementation designed to efficiently load and cache localized product translations while avoiding common performance pitfalls such as N+1 queries.
 
